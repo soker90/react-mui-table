@@ -1,14 +1,17 @@
-import {ReactNode} from 'react'
+import {ReactElement, ReactNode} from 'react'
 
 export interface Column {
-  title: string;
-  field?: string;
-  render?: (row: any) => ReactNode;
+    title: string;
+    field?: string;
+    render?: (row: any) => ReactNode;
 }
 
+export type DisabledButton = boolean | ((row: any) => boolean);
+
 export interface Action {
-  icon: ReactNode
-  onClick: (row: any) => void
-  tooltip?: string
-  disabled?: (row: any) => boolean
+    icon: any;
+    onClick: (row: any, index: number) => void
+    tooltip: string
+    disabled?: DisabledButton
+    isFreeAction?: boolean
 }
