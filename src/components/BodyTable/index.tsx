@@ -11,10 +11,10 @@ interface BodyTableProps {
   actions?: Action[];
   classes: any;
   data: any[];
-  href?: string;
+  href?: any;
   onRowClick?: (row: any) => void;
   multiSelect?: (row: any) => boolean;
-  onSelected?: (event: any, row: any) => void;
+  onSelected?: any;
   rowClass?: (row: any) => string;
 }
 
@@ -42,7 +42,7 @@ const BodyTable = ({
             </TableCell>
           )}
           {columns.map(({ field, render }) => (
-            <TableCell key={uniqId()}>
+            <TableCell key={field}>
               <Box
                 {...(href && {
                   component: Link,
@@ -50,7 +50,7 @@ const BodyTable = ({
                   className: classes.cell,
                 })}
               >
-                {render?.(row) || row[field]}
+                {render?.(row) || row[field as string]}
               </Box>
             </TableCell>
           ))}

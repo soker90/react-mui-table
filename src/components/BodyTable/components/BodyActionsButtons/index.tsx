@@ -1,6 +1,5 @@
 import {useMemo} from 'react';
 import {IconButton, TableCell, Tooltip} from '@mui/material';
-import uniqId from 'uniqid';
 
 import {tooltipStyle, actionIcon} from './styles';
 import {Action, DisabledButton} from "../../../../types";
@@ -18,11 +17,12 @@ const BodyActionsButtons = ({row, index, actions,}: BodyActionsButtonsProps) => 
         [actions],
     );
 
-    const _isDisabled: boolean = (disabled: DisabledButton) => (
+    const _isDisabled = (disabled: DisabledButton): boolean => (
         typeof disabled === 'function'
             ? disabled(row)
-            : disabled
+            : Boolean(disabled)
     );
+
 
     return (
         <TableCell align='right'>
@@ -31,17 +31,16 @@ const BodyActionsButtons = ({row, index, actions,}: BodyActionsButtonsProps) => 
                           icon: Icon, tooltip, onClick, to, disabled, ...restButton
                       }) => (
                     <Tooltip
-                        key={uniqId()}
+                        key={tooltip}
                         title={tooltip}
                         sx={tooltipStyle}
-                        disabled={_isDisabled(disabled)}
-                        component='span'
                     >
                         <IconButton
                             {...(onClick && {onClick: () => onClick(row, index)})}
                             {...(to && {to: to(row, index)})}
                             {...restButton}
                             size='large'
+                            disabled={_isDisabled(disabled)}
                         >
                             <Icon className={actionIcon}/>
                         </IconButton>

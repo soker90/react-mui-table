@@ -13,17 +13,16 @@ import HeadTable from './components/HeadTable';
 import BodyTable from './components/BodyTable';
 import TitleTable from './components/TitleTable';
 import { labelOfRows } from './utils';
-import { useStyles } from './TableMaterial.styles';
+import * as styles from './styles';
 
 const TableMaterial = ({
   className, columns, actions, data, title, refresh, count, onRowClick, withCard, href, multiSelect,
   onSelected, rowClass, rowsPerPageOptions, ...rest
-}) => {
-  const classes = useStyles();
+}: any) => {
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(rowsPerPageOptions?.[0] || 10);
 
-  const handlePageChange = (event, newPage) => {
+  const handlePageChange = (event: any, newPage: any) => {
     setPage(newPage);
     refresh({
       offset: newPage * limit,
@@ -31,7 +30,7 @@ const TableMaterial = ({
     });
   };
 
-  const handleLimitChange = event => {
+  const handleLimitChange = (event: any) => {
     setLimit(event.target.value);
     refresh({
       offset: page * event.target.value,
@@ -43,18 +42,17 @@ const TableMaterial = ({
 
   return (
     <Wrapper
-      className={clsx(classes.root, className)}
+      className={clsx(styles.root, className)}
       {...rest}
     >
       <TitleTable title={title} />
-      <PerfectScrollbar>
         <Box>
           <Table>
             <HeadTable actions={actions} columns={columns} multiSelect={multiSelect} />
             <BodyTable
               columns={columns}
               actions={actions}
-              classes={classes}
+              classes={styles}
               data={data}
               href={href}
               onRowClick={onRowClick}
@@ -66,7 +64,6 @@ const TableMaterial = ({
 
           <NoData elements={data.length} />
         </Box>
-      </PerfectScrollbar>
       {Boolean(count)
       && (
         <TablePagination
