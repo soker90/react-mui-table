@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-const TitleTable = ({ title }: {title: string}) => (
+const TitleTable = ({ title }: {title?: string}) => (
   title
     ? (
       <Box p={2}>

@@ -4,7 +4,7 @@ import {Action, Column} from "../../types";
 interface HeadTableProps {
     columns: Column[];
     actions?: Action[];
-    multiSelect?: boolean;
+    multiSelect?: (row: object) => boolean;
 }
 
 const HeadTable = ({columns, actions, multiSelect}: HeadTableProps) => (
