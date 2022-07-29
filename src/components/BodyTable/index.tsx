@@ -28,7 +28,7 @@ const BodyTable = ({
         <TableRow
           onMouseDown={() => onRowClick?.(row)}
           hover
-          key={row.title}
+          key={index}
           selected={isSelected}
           className={rowClass?.(row) || ''}
         >
