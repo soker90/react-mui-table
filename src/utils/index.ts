@@ -4,4 +4,4 @@ export const labelOfRows = ({ from, to, count }: {from: number, to: number, coun
   count !== -1
     ? count
     : `más de ${to}`
-}`;
+}`

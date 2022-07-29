@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material'
 
 const NoData = ({ elements }: {elements: number}) => (
   (elements === 0)
@@ -12,8 +12,8 @@ const NoData = ({ elements }: {elements: number}) => (
           No se han encontrado datos
         </Typography>
       </Box>
-    )
+      )
     : null
 )
 
-export default NoData;
+export default NoData

@@ -8,7 +8,6 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@emotion/react": "^11.9.3",
@@ -23,9 +22,17 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "0.0.13",
     "@types/react": "^18.0.15",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
     "babel-loader": "^8.2.5",
     "esbuild": "^0.14.50",
     "esbuild-node-externals": "^1.4.1",
+    "eslint": "^8.20.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
@@ -36,7 +43,9 @@
     "ts-types": "tsc --emitDeclarationOnly --outDir dist",
     "build": "rimraf dist && node ./esbuild.mjs && npm run ts-types",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint ./src --ext .ts,.tsx --fix",
+    "lint-check": "eslint ./src --ext .ts,.tsx"
   },
   "repository": {
     "type": "git",
@@ -52,6 +61,8 @@
   "peerDependencies": {
     "@mui/material": "^5.9.2",
     "react": "^18.0.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-dom": "^18.0.0",
+    "@emotion/styled": "^11.9.3"
   }
 }

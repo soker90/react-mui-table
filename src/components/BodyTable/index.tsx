@@ -1,10 +1,10 @@
 import {
-  Box, TableBody, TableCell, TableRow, Checkbox,
+  Box, TableBody, TableCell, TableRow, Checkbox
 } from '@mui/material'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import BodyActionsButtons from './components/BodyActionsButtons';
-import {Column, Action} from '../../types'
+import BodyActionsButtons from './components/BodyActionsButtons'
+import { Column, Action } from '../../types'
 
 interface BodyTableProps {
   columns: Column[];
@@ -19,11 +19,11 @@ interface BodyTableProps {
 }
 
 const BodyTable = ({
-  data, onRowClick, columns, href, classes, actions, multiSelect, onSelected, rowClass,
+  data, onRowClick, columns, href, classes, actions, multiSelect, onSelected, rowClass
 }: BodyTableProps) => (
   <TableBody>
     {data.map((row, index) => {
-      const isSelected = multiSelect?.(row);
+      const isSelected = multiSelect?.(row)
       return (
         <TableRow
           onMouseDown={() => onRowClick?.(row)}
@@ -47,7 +47,7 @@ const BodyTable = ({
                 {...(href && {
                   component: Link,
                   to: href(row),
-                  className: classes.cell,
+                  className: classes.cell
                 })}
               >
                 {render?.(row) || row[field as string]}
@@ -55,8 +55,8 @@ const BodyTable = ({
             </TableCell>
           ))}
 
-          {actions
-          && (
+          {actions &&
+          (
             <BodyActionsButtons
               actions={actions}
               index={index}
@@ -64,9 +64,9 @@ const BodyTable = ({
             />
           )}
         </TableRow>
-      );
+      )
     })}
   </TableBody>
-);
+)
 
-export default BodyTable;
+export default BodyTable

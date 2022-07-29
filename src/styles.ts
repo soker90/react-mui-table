@@ -1,18 +1,18 @@
 export const root = {
-    width: 'auto',
-    overflowX: 'visible',
+  width: 'auto',
+  overflowX: 'visible'
 }
 
 export const tooltip = {
-    marginRight: '1.5px',
-    padding: 0,
+  marginRight: '1.5px',
+  padding: 0
 }
 
 export const actionIcon = {
-    padding: '0.1px',
+  padding: '0.1px'
 }
 
 export const cell = {
-    textDecoration: 'none',
-    color: 'inherit',
+  textDecoration: 'none',
+  color: 'inherit'
 }

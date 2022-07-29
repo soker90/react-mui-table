@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material'
 
 const TitleTable = ({ title }: {title?: string}) => (
   title
@@ -16,8 +16,8 @@ const TitleTable = ({ title }: {title?: string}) => (
           </Typography>
         </Box>
       </Box>
-    )
+      )
     : null
 )
 
-export default TitleTable;
+export default TitleTable
