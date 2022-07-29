@@ -1,2 +1,2 @@
 export {default} from './TableMaterial'
-export {Action, Column} from './types'
+export type { Action, Column } from './types'
