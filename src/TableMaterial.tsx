@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react'
+import React, {useMemo, useState} from 'react'
 import {
-  Box,
-  Card,
-  SxProps,
-  Table,
-  TablePagination
+    Box,
+    Card,
+    SxProps,
+    Table,
+    TablePagination
 } from '@mui/material'
 import styled from '@emotion/styled'
 
@@ -12,9 +12,9 @@ import NoData from './components/NoData'
 import HeadTable from './components/HeadTable'
 import BodyTable from './components/BodyTable'
 import TitleTable from './components/TitleTable'
-import { labelOfRows } from './utils'
+import {labelOfRows} from './utils'
 import * as styles from './styles'
-import { Action, Column } from './types'
+import {Action, Column} from './types'
 
 export interface TableMaterialProps {
     sx?: SxProps;
@@ -22,7 +22,7 @@ export interface TableMaterialProps {
     actions?: Action[]
     data: object[];
     title?: string;
-    refresh: ({ offset, limit }: { offset?: number, limit?: number }) => void;
+    refresh?: ({offset, limit}: { offset?: number, limit?: number }) => void;
     count?: number;
     onRowClick?: (row: object) => void;
     withCard?: boolean;
@@ -34,54 +34,54 @@ export interface TableMaterialProps {
 }
 
 const TableMaterial = (
-  {
-    columns,
-    actions,
-    data = [],
-    title,
-    refresh,
-    count = 0,
-    onRowClick,
-    withCard = true,
-    href,
-    multiSelect,
-    onSelected,
-    rowClass,
-    rowsPerPageOptions,
-    ...rest
-  }: TableMaterialProps) => {
-  const [page, setPage] = useState(0)
-  const [limit, setLimit] = useState(rowsPerPageOptions?.[0] || 10)
+    {
+        columns,
+        actions,
+        data = [],
+        title,
+        refresh,
+        count = 0,
+        onRowClick,
+        withCard = true,
+        href,
+        multiSelect,
+        onSelected,
+        rowClass,
+        rowsPerPageOptions,
+        ...rest
+    }: TableMaterialProps) => {
+    const [page, setPage] = useState(0)
+    const [limit, setLimit] = useState(rowsPerPageOptions?.[0] || 10)
 
-  const handlePageChange = (event: any, newPage: any) => {
-    setPage(newPage)
-    refresh({
-      offset: newPage * limit,
-      limit
-    })
-  }
+    const handlePageChange = (event: any, newPage: any) => {
+        setPage(newPage)
+        refresh?.({
+            offset: newPage * limit,
+            limit
+        })
+    }
 
-  const handleLimitChange = (event: any) => {
-    setLimit(event.target.value)
-    refresh({
-      offset: page * event.target.value,
-      limit: event.target.value
-    })
-  }
+    const handleLimitChange = (event: any) => {
+        setLimit(event.target.value)
+        refresh?.({
+            offset: page * event.target.value,
+            limit: event.target.value
+        })
+    }
 
-  const Wrapper = useMemo(() => (
-    withCard
-      ? styled(Card)`
-          width: auto;
-          overflowX: 'visible';
-        `
-      : styled.div`
-          width: auto;
-          overflowX: 'visible';
-        `
-  ), [withCard])
+    const Wrapper = useMemo(() => (
+        withCard
+            ? styled(Card)`
+                  width: auto;
+                  overflowX: 'visible';
+            `
+            : styled.div`
+                  width: auto;
+                  overflowX: 'visible';
+            `
+    ), [withCard])
 
-  return (
+    return (
         <Wrapper
             {...rest}
         >
@@ -119,7 +119,7 @@ const TableMaterial = (
                     />
                 )}
         </Wrapper>
-  )
+    )
 }
 
 export default TableMaterial

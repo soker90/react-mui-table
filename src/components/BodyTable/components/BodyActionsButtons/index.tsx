@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { IconButton, TableCell, Tooltip } from '@mui/material'
 
 import { tooltipStyle, actionIcon } from './styles'

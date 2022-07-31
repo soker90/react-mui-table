@@ -1,3 +1,4 @@
+import React from 'react'
 import { TableCell, TableHead, TableRow } from '@mui/material'
 import { Action, Column } from '../../types'
 
