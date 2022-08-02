@@ -1,6 +1,6 @@
 {
   "name": "@soker90/react-mui-table",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React date table for Material UI",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
