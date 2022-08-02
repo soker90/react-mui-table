@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Table from '../index'
+import {TableMaterial as Table} from '../index'
 
 export default {
   title: 'Table',
