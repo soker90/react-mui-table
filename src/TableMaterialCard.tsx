@@ -1,29 +1,26 @@
 import React from 'react'
 import {
-    Card,
+  Card
 } from '@mui/material'
-import TableMaterial from "./TableMaterial";
-
+import TableMaterial from './TableMaterial'
 
 const TableMaterialCard = (
-    {
-        sx,
-        ...rest
-    }: any) => {
-
-
-    return (
+  {
+    sx,
+    ...rest
+  }: any) => {
+  return (
         <Card
             sx={{
-                width: 'auto',
-                overflowX: 'visible',
-                ...sx
+              width: 'auto',
+              overflowX: 'visible',
+              ...sx
             }}
             {...rest}
         >
             <TableMaterial {...rest} />
         </Card>
-    )
+  )
 }
 
 export default TableMaterialCard

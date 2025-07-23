@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react'
 import { action } from 'storybook/actions'
-import {TableMaterial as Table} from '../index'
+import { TableMaterial as Table } from '../index'
 
 export default {
   title: 'Table',
@@ -12,17 +12,17 @@ export const Primary: StoryObj<typeof Table> = {
     columns: [
       {
         title: 'Columna 1',
-        field: 'column',
+        field: 'column'
       },
       {
         title: 'Columna 2',
         field: 'date',
-        render: ({ date }: { date: Date }) => `Día ${date.getDay()}`,
+        render: ({ date }: { date: Date }) => `Día ${date.getDay()}`
       },
       {
         title: 'Columna 3',
-        field: 'column3',
-      },
+        field: 'column3'
+      }
     ],
     data: [
       { column: 'Valor 1', date: new Date(1609428038070), column3: 'Otro valor' },
@@ -34,11 +34,11 @@ export const Primary: StoryObj<typeof Table> = {
       { column: 'Valor 7', date: new Date(1609428038076), column3: 'Otro valor' },
       { column: 'Valor 8', date: new Date(1609428038077), column3: 'Otro valor' },
       { column: 'Valor 9', date: new Date(1609428038078), column3: 'Otro valor' },
-      { column: 'Valor 10', date: new Date(1609428038079), column3: 'Otro valor' },
+      { column: 'Valor 10', date: new Date(1609428038079), column3: 'Otro valor' }
     ],
     title: 'Mi tabla',
     refresh: action('Actualiza la tabla'),
     onRowClick: action('Se ha pulsado en una fila'),
-    count: 10,
-  },
-};
+    count: 10
+  }
+}
