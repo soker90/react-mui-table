@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 
-const NoData = ({ elements }: {elements: number}) => (
+const NoData = ({ elements }: { elements: number }) => (
   (elements === 0)
     ? (
       <Box p={2}>

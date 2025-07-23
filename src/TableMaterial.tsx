@@ -17,20 +17,20 @@ import * as styles from './styles'
 import { Action, Column } from './types'
 
 export interface TableMaterialProps {
-    sx?: SxProps;
-    columns: Column[];
-    actions?: Action[]
-    data: object[];
-    title?: string;
-    refresh?: ({ offset, limit }: { offset?: number, limit?: number }) => void;
-    count?: number;
-    onRowClick?: (row: object) => void;
-    withCard?: boolean;
-    href?: string;
-    multiSelect?: (row: object) => boolean;
-    onSelected?: (selected: object[]) => void;
-    rowClass?: (row: object) => string;
-    rowsPerPageOptions?: number[];
+  sx?: SxProps;
+  columns: Column[];
+  actions?: Action[]
+  data: object[];
+  title?: string;
+  refresh?: ({ offset, limit }: { offset?: number, limit?: number }) => void;
+  count?: number;
+  onRowClick?: (row: object) => void;
+  withCard?: boolean;
+  href?: string;
+  multiSelect?: (row: object) => boolean;
+  onSelected?: (selected: object[]) => void;
+  rowClass?: (row: object) => string;
+  rowsPerPageOptions?: number[];
 }
 
 const TableMaterial = (
@@ -82,43 +82,43 @@ const TableMaterial = (
   ), [withCard])
 
   return (
-        <Wrapper
-            {...rest}
-        >
-            <TitleTable title={title}/>
-            <Box>
-                <Table>
-                    <HeadTable actions={actions} columns={columns} multiSelect={multiSelect}/>
-                    <BodyTable
-                        columns={columns}
-                        actions={actions}
-                        classes={styles}
-                        data={data}
-                        href={href}
-                        onRowClick={onRowClick}
-                        multiSelect={multiSelect}
-                        onSelected={onSelected}
-                        rowClass={rowClass}
-                    />
-                </Table>
+    <Wrapper
+      {...rest}
+    >
+      <TitleTable title={title} />
+      <Box>
+        <Table>
+          <HeadTable actions={actions} columns={columns} multiSelect={multiSelect} />
+          <BodyTable
+            columns={columns}
+            actions={actions}
+            classes={styles}
+            data={data}
+            href={href}
+            onRowClick={onRowClick}
+            multiSelect={multiSelect}
+            onSelected={onSelected}
+            rowClass={rowClass}
+          />
+        </Table>
 
-                <NoData elements={data.length}/>
-            </Box>
-            {Boolean(count) &&
+        <NoData elements={data.length} />
+      </Box>
+      {Boolean(count) &&
                 (
-                    <TablePagination
-                        component='div'
-                        count={count}
-                        onPageChange={handlePageChange}
-                        onRowsPerPageChange={handleLimitChange}
-                        page={page}
-                        rowsPerPage={limit}
-                        rowsPerPageOptions={rowsPerPageOptions || [10, 20, 30]}
-                        labelRowsPerPage='filas'
-                        labelDisplayedRows={labelOfRows}
-                    />
+                  <TablePagination
+                    component='div'
+                    count={count}
+                    onPageChange={handlePageChange}
+                    onRowsPerPageChange={handleLimitChange}
+                    page={page}
+                    rowsPerPage={limit}
+                    rowsPerPageOptions={rowsPerPageOptions || [10, 20, 30]}
+                    labelRowsPerPage='filas'
+                    labelDisplayedRows={labelOfRows}
+                  />
                 )}
-        </Wrapper>
+    </Wrapper>
   )
 }
 

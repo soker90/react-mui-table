@@ -10,16 +10,16 @@ const TableMaterialCard = (
     ...rest
   }: any) => {
   return (
-        <Card
-            sx={{
-              width: 'auto',
-              overflowX: 'visible',
-              ...sx
-            }}
-            {...rest}
-        >
-            <TableMaterial {...rest} />
-        </Card>
+    <Card
+      sx={{
+        width: 'auto',
+        overflowX: 'visible',
+        ...sx
+      }}
+      {...rest}
+    >
+      <TableMaterial {...rest} />
+    </Card>
   )
 }
 
