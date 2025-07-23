@@ -1,12 +1,19 @@
-module.exports = {
+
+
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const config = {
   "stories": [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-webpack5-compiler-swc",
+    "@storybook/addon-docs",
+    "@storybook/addon-onboarding"
   ],
-  "framework": "@storybook/react"
-}
+  "framework": {
+    "name": "@storybook/react-webpack5",
+    "options": {}
+  }
+};
+export default config;
