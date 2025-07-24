@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Box, TableBody, TableCell, TableRow, Checkbox
 } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 import BodyActionsButtons from './components/BodyActionsButtons'
 import { Column, Action } from '../../types'

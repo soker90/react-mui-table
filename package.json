@@ -1,6 +1,6 @@
 {
   "name": "@soker90/react-mui-table",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React date table for Material UI",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -68,7 +68,7 @@
     "@mui/material": "^7.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.7.0",
+    "react-router": "^7.7.0",
     "typescript": "^5.8.3"
   },
   "eslintConfig": {
